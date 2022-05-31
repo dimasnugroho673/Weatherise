@@ -14,6 +14,13 @@
 		40F67A782846238D006D5507 /* Weatherise_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F67A772846238D006D5507 /* Weatherise_SwiftUITests.swift */; };
 		40F67A822846238D006D5507 /* Weatherise_SwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F67A812846238D006D5507 /* Weatherise_SwiftUIUITests.swift */; };
 		40F67A842846238D006D5507 /* Weatherise_SwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F67A832846238D006D5507 /* Weatherise_SwiftUIUITestsLaunchTests.swift */; };
+		40F67A9D284674DE006D5507 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F67A9C284674DE006D5507 /* Weather.swift */; };
+		40F67A9F28467502006D5507 /* WeatherRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F67A9E28467502006D5507 /* WeatherRepositoryProtocol.swift */; };
+		40F67AA128467DDB006D5507 /* WeatherUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F67AA028467DDA006D5507 /* WeatherUseCase.swift */; };
+		40F67AA328467E6F006D5507 /* WeatherInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F67AA228467E6F006D5507 /* WeatherInteractor.swift */; };
+		40F67AA528467F4C006D5507 /* WeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F67AA428467F4C006D5507 /* WeatherRepository.swift */; };
+		40F67AA82846809B006D5507 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F67AA72846809B006D5507 /* HomeViewModel.swift */; };
+		40F67AAA284684E5006D5507 /* WeatherRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F67AA9284684E5006D5507 /* WeatherRemoteDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +51,13 @@
 		40F67A7D2846238D006D5507 /* Weatherise SwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Weatherise SwiftUIUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		40F67A812846238D006D5507 /* Weatherise_SwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weatherise_SwiftUIUITests.swift; sourceTree = "<group>"; };
 		40F67A832846238D006D5507 /* Weatherise_SwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weatherise_SwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		40F67A9C284674DE006D5507 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		40F67A9E28467502006D5507 /* WeatherRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRepositoryProtocol.swift; sourceTree = "<group>"; };
+		40F67AA028467DDA006D5507 /* WeatherUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUseCase.swift; sourceTree = "<group>"; };
+		40F67AA228467E6F006D5507 /* WeatherInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInteractor.swift; sourceTree = "<group>"; };
+		40F67AA428467F4C006D5507 /* WeatherRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRepository.swift; sourceTree = "<group>"; };
+		40F67AA72846809B006D5507 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		40F67AA9284684E5006D5507 /* WeatherRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRemoteDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +156,7 @@
 		40F67A91284671C3006D5507 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				40F67A9728467310006D5507 /* RepositoryInterface */,
+				40F67A9728467310006D5507 /* RepositoryProtocol */,
 				40F67A96284672C4006D5507 /* UseCase */,
 				40F67A95284672BC006D5507 /* Model */,
 			);
@@ -161,6 +175,7 @@
 		40F67A932846723F006D5507 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				40F67AA72846809B006D5507 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -175,6 +190,7 @@
 		40F67A95284672BC006D5507 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				40F67A9C284674DE006D5507 /* Weather.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,20 +198,24 @@
 		40F67A96284672C4006D5507 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				40F67AA028467DDA006D5507 /* WeatherUseCase.swift */,
+				40F67AA228467E6F006D5507 /* WeatherInteractor.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
 		};
-		40F67A9728467310006D5507 /* RepositoryInterface */ = {
+		40F67A9728467310006D5507 /* RepositoryProtocol */ = {
 			isa = PBXGroup;
 			children = (
+				40F67A9E28467502006D5507 /* WeatherRepositoryProtocol.swift */,
 			);
-			path = RepositoryInterface;
+			path = RepositoryProtocol;
 			sourceTree = "<group>";
 		};
 		40F67A9828467397006D5507 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				40F67AA428467F4C006D5507 /* WeatherRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -212,6 +232,7 @@
 		40F67A9A284673D5006D5507 /* RemoteDataSource */ = {
 			isa = PBXGroup;
 			children = (
+				40F67AA9284684E5006D5507 /* WeatherRemoteDataSource.swift */,
 			);
 			path = RemoteDataSource;
 			sourceTree = "<group>";
@@ -353,8 +374,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40F67AA528467F4C006D5507 /* WeatherRepository.swift in Sources */,
+				40F67A9F28467502006D5507 /* WeatherRepositoryProtocol.swift in Sources */,
 				40F67A692846238B006D5507 /* ContentView.swift in Sources */,
+				40F67AA82846809B006D5507 /* HomeViewModel.swift in Sources */,
+				40F67A9D284674DE006D5507 /* Weather.swift in Sources */,
 				40F67A672846238B006D5507 /* Weatherise_SwiftUIApp.swift in Sources */,
+				40F67AAA284684E5006D5507 /* WeatherRemoteDataSource.swift in Sources */,
+				40F67AA128467DDB006D5507 /* WeatherUseCase.swift in Sources */,
+				40F67AA328467E6F006D5507 /* WeatherInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
