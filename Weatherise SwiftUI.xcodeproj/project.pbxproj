@@ -94,6 +94,9 @@
 		40F67A652846238B006D5507 /* Weatherise SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				40F67A92284671CA006D5507 /* Data */,
+				40F67A91284671C3006D5507 /* Domain */,
+				40F67A90284671BC006D5507 /* Presentation */,
 				40F67A662846238B006D5507 /* Weatherise_SwiftUIApp.swift */,
 				40F67A682846238B006D5507 /* ContentView.swift */,
 				40F67A6A2846238C006D5507 /* Assets.xcassets */,
@@ -125,6 +128,99 @@
 				40F67A832846238D006D5507 /* Weatherise_SwiftUIUITestsLaunchTests.swift */,
 			);
 			path = "Weatherise SwiftUIUITests";
+			sourceTree = "<group>";
+		};
+		40F67A90284671BC006D5507 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				40F67A9428467245006D5507 /* View */,
+				40F67A932846723F006D5507 /* ViewModel */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		40F67A91284671C3006D5507 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				40F67A9728467310006D5507 /* RepositoryInterface */,
+				40F67A96284672C4006D5507 /* UseCase */,
+				40F67A95284672BC006D5507 /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		40F67A92284671CA006D5507 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				40F67A992846739E006D5507 /* DataSource */,
+				40F67A9828467397006D5507 /* Repository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		40F67A932846723F006D5507 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		40F67A9428467245006D5507 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		40F67A95284672BC006D5507 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		40F67A96284672C4006D5507 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		40F67A9728467310006D5507 /* RepositoryInterface */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RepositoryInterface;
+			sourceTree = "<group>";
+		};
+		40F67A9828467397006D5507 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		40F67A992846739E006D5507 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				40F67A9B284673E0006D5507 /* LocalDataSource */,
+				40F67A9A284673D5006D5507 /* RemoteDataSource */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		40F67A9A284673D5006D5507 /* RemoteDataSource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RemoteDataSource;
+			sourceTree = "<group>";
+		};
+		40F67A9B284673E0006D5507 /* LocalDataSource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LocalDataSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
