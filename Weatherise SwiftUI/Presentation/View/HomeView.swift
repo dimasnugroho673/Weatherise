@@ -12,17 +12,17 @@ struct HomeView: View {
 
   @ObservedObject var viewModel: HomeViewModel = HomeViewModel(useCase: Injection().provideHome())
 
-    var body: some View {
-        Text("Hello, world!")
-            .padding()
-            .onAppear {
-              viewModel.fetchWeather(location: CLLocation(latitude: 0.916696, longitude: 104.4548317))
-            }
-    }
+  var body: some View {
+    Text("Hello, world!")
+      .padding()
+      .onAppear {
+        viewModel.fetchWeather(location: CLLocation(latitude: 0.916696, longitude: 104.4548317))
+      }
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
+  static var previews: some View {
+    HomeView()
+  }
 }
