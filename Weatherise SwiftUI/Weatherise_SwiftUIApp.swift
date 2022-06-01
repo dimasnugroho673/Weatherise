@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import Swinject
 
 @main
 struct Weatherise_SwiftUIApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  var body: some Scene {
+    WindowGroup {
+      ContentView()
     }
+  }
 }

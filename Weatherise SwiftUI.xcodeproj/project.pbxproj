@@ -21,6 +21,8 @@
 		40F67AA528467F4C006D5507 /* WeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F67AA428467F4C006D5507 /* WeatherRepository.swift */; };
 		40F67AA82846809B006D5507 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F67AA72846809B006D5507 /* HomeViewModel.swift */; };
 		40F67AAA284684E5006D5507 /* WeatherRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F67AA9284684E5006D5507 /* WeatherRemoteDataSource.swift */; };
+		40F67AB028470B9F006D5507 /* Cleanse in Frameworks */ = {isa = PBXBuildFile; productRef = 40F67AAF28470B9F006D5507 /* Cleanse */; };
+		40F67AB328477102006D5507 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F67AB228477102006D5507 /* Injection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,7 @@
 		40F67AA428467F4C006D5507 /* WeatherRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRepository.swift; sourceTree = "<group>"; };
 		40F67AA72846809B006D5507 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		40F67AA9284684E5006D5507 /* WeatherRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRemoteDataSource.swift; sourceTree = "<group>"; };
+		40F67AB228477102006D5507 /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40F67AB028470B9F006D5507 /* Cleanse in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,11 +112,11 @@
 		40F67A652846238B006D5507 /* Weatherise SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				40F67AB1284770F0006D5507 /* Utils */,
 				40F67A92284671CA006D5507 /* Data */,
 				40F67A91284671C3006D5507 /* Domain */,
 				40F67A90284671BC006D5507 /* Presentation */,
 				40F67A662846238B006D5507 /* Weatherise_SwiftUIApp.swift */,
-				40F67A682846238B006D5507 /* ContentView.swift */,
 				40F67A6A2846238C006D5507 /* Assets.xcassets */,
 				40F67A6C2846238C006D5507 /* Preview Content */,
 			);
@@ -183,6 +187,7 @@
 		40F67A9428467245006D5507 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				40F67A682846238B006D5507 /* ContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -244,6 +249,14 @@
 			path = LocalDataSource;
 			sourceTree = "<group>";
 		};
+		40F67AB1284770F0006D5507 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				40F67AB228477102006D5507 /* Injection.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -260,6 +273,9 @@
 			dependencies = (
 			);
 			name = "Weatherise SwiftUI";
+			packageProductDependencies = (
+				40F67AAF28470B9F006D5507 /* Cleanse */,
+			);
 			productName = "Weatherise SwiftUI";
 			productReference = 40F67A632846238B006D5507 /* Weatherise SwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -332,6 +348,9 @@
 				Base,
 			);
 			mainGroup = 40F67A5A2846238B006D5507;
+			packageReferences = (
+				40F67AAE28470B9F006D5507 /* XCRemoteSwiftPackageReference "Cleanse" */,
+			);
 			productRefGroup = 40F67A642846238B006D5507 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -379,6 +398,7 @@
 				40F67A692846238B006D5507 /* ContentView.swift in Sources */,
 				40F67AA82846809B006D5507 /* HomeViewModel.swift in Sources */,
 				40F67A9D284674DE006D5507 /* Weather.swift in Sources */,
+				40F67AB328477102006D5507 /* Injection.swift in Sources */,
 				40F67A672846238B006D5507 /* Weatherise_SwiftUIApp.swift in Sources */,
 				40F67AAA284684E5006D5507 /* WeatherRemoteDataSource.swift in Sources */,
 				40F67AA128467DDB006D5507 /* WeatherUseCase.swift in Sources */,
@@ -731,6 +751,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		40F67AAE28470B9F006D5507 /* XCRemoteSwiftPackageReference "Cleanse" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/square/Cleanse";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		40F67AAF28470B9F006D5507 /* Cleanse */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 40F67AAE28470B9F006D5507 /* XCRemoteSwiftPackageReference "Cleanse" */;
+			productName = Cleanse;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 40F67A5B2846238B006D5507 /* Project object */;
 }

@@ -10,7 +10,7 @@ import CoreLocation
 
 struct ContentView: View {
 
-  @ObservedObject var viewModel: HomeViewModel = HomeViewModel()
+  @ObservedObject var viewModel: HomeViewModel = HomeViewModel(useCase: Injection().provideHome())
 
     var body: some View {
         Text("Hello, world!")

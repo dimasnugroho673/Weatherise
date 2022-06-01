@@ -7,10 +7,15 @@
 
 import Foundation
 import CoreLocation
+import Swinject
 
 class HomeViewModel: ObservableObject {
 
-  private var useCase: WeatherUseCase = WeatherInteractor(repository: WeatherRepository(remoteDataSource: WeatherRemoteDataSource()))
+  private var useCase: WeatherUseCase
+
+  init(useCase: WeatherUseCase) {
+    self.useCase = useCase
+  }
 
   func fetchWeather(location: CLLocation) {
     useCase.fetchWeather(location: location) { weather in
