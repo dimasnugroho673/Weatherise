@@ -12,7 +12,7 @@ import Swinject
 struct Weatherise_SwiftUIApp: App {
   var body: some Scene {
     WindowGroup {
-      ContentView()
+      HomeView()
     }
   }
 }

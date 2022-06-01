@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreLocation
 
-struct ContentView: View {
+struct HomeView: View {
 
   @ObservedObject var viewModel: HomeViewModel = HomeViewModel(useCase: Injection().provideHome())
 
@@ -23,6 +23,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        HomeView()
     }
 }
