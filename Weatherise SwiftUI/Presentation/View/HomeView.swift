@@ -18,7 +18,7 @@ struct HomeView: View {
         Text("\(weatherViewModel.location?.name ?? "")")
         Text("\(weatherViewModel.currentTempC)℃")
           .font(Font.system(size: 56, weight: .regular))
-      Text("\(weatherViewModel.currentWeather?.condition.text ?? "")")
+        Text("\(weatherViewModel.currentWeather?.condition.text ?? "")")
       } else {
         Text("Loading")
           .padding()
