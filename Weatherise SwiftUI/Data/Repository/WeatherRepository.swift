@@ -16,8 +16,8 @@ class WeatherRepository: WeatherRepositoryProtocol {
     self.remoteDataSource = remoteDataSource
   }
 
-  func fetchWeather(location: CLLocation, completion: @escaping (CurrentWeather) -> ()) {
-    remoteDataSource.fetchWeather(location: location) { weather in
+  func fetchCurrentWeather(location: CLLocation, completion: @escaping (Weather) -> ()) {
+    remoteDataSource.fetchCurrentWeather(location: location) { weather in
       completion(weather)
     }
   }

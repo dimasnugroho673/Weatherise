@@ -10,14 +10,23 @@ import CoreLocation
 
 struct HomeView: View {
 
-  @ObservedObject var viewModel: HomeViewModel = HomeViewModel(useCase: Injection().provideHome())
+  @ObservedObject var weatherViewModel: HomeViewModel = HomeViewModel(useCase: Injection().provideHome())
 
   var body: some View {
-    Text("Hello, world!")
-      .padding()
-      .onAppear {
-        viewModel.fetchWeather(location: CLLocation(latitude: 0.916696, longitude: 104.4548317))
+    VStack {
+      if weatherViewModel.isLoading != true {
+        Text("\(weatherViewModel.location?.name ?? "")")
+        Text("\(weatherViewModel.currentTempC)℃")
+          .font(Font.system(size: 56, weight: .regular))
+      Text("\(weatherViewModel.currentWeather?.condition.text ?? "")")
+      } else {
+        Text("Loading")
+          .padding()
       }
+    }
+    .onAppear {
+      weatherViewModel.fetchWeather(location: CLLocation(latitude: 0.916696, longitude: 104.4548317))
+    }
   }
 }
 

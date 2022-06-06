@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		403104C6284E5462000630C2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 403104C5284E5462000630C2 /* Alamofire */; };
+		403104C9284E5542000630C2 /* Weather-API-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 403104C8284E5542000630C2 /* Weather-API-Info.plist */; };
+		403104CB284E5636000630C2 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403104CA284E5636000630C2 /* Constant.swift */; };
 		40F67A672846238B006D5507 /* Weatherise_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F67A662846238B006D5507 /* Weatherise_SwiftUIApp.swift */; };
 		40F67A692846238B006D5507 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F67A682846238B006D5507 /* HomeView.swift */; };
 		40F67A6B2846238C006D5507 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40F67A6A2846238C006D5507 /* Assets.xcassets */; };
@@ -21,7 +24,6 @@
 		40F67AA528467F4C006D5507 /* WeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F67AA428467F4C006D5507 /* WeatherRepository.swift */; };
 		40F67AA82846809B006D5507 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F67AA72846809B006D5507 /* HomeViewModel.swift */; };
 		40F67AAA284684E5006D5507 /* WeatherRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F67AA9284684E5006D5507 /* WeatherRemoteDataSource.swift */; };
-		40F67AB028470B9F006D5507 /* Cleanse in Frameworks */ = {isa = PBXBuildFile; productRef = 40F67AAF28470B9F006D5507 /* Cleanse */; };
 		40F67AB328477102006D5507 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F67AB228477102006D5507 /* Injection.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		403104C8284E5542000630C2 /* Weather-API-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Weather-API-Info.plist"; sourceTree = "<group>"; };
+		403104CA284E5636000630C2 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		40F67A632846238B006D5507 /* Weatherise SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weatherise SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		40F67A662846238B006D5507 /* Weatherise_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weatherise_SwiftUIApp.swift; sourceTree = "<group>"; };
 		40F67A682846238B006D5507 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -68,7 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40F67AB028470B9F006D5507 /* Cleanse in Frameworks */,
+				403104C6284E5462000630C2 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +93,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		403104C7284E5507000630C2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				40F67A6A2846238C006D5507 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		40F67A5A2846238B006D5507 = {
 			isa = PBXGroup;
 			children = (
@@ -112,13 +124,14 @@
 		40F67A652846238B006D5507 /* Weatherise SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				403104C8284E5542000630C2 /* Weather-API-Info.plist */,
+				40F67A6C2846238C006D5507 /* Preview Content */,
+				403104C7284E5507000630C2 /* Supporting Files */,
 				40F67AB1284770F0006D5507 /* Utils */,
 				40F67A92284671CA006D5507 /* Data */,
 				40F67A91284671C3006D5507 /* Domain */,
 				40F67A90284671BC006D5507 /* Presentation */,
 				40F67A662846238B006D5507 /* Weatherise_SwiftUIApp.swift */,
-				40F67A6A2846238C006D5507 /* Assets.xcassets */,
-				40F67A6C2846238C006D5507 /* Preview Content */,
 			);
 			path = "Weatherise SwiftUI";
 			sourceTree = "<group>";
@@ -253,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				40F67AB228477102006D5507 /* Injection.swift */,
+				403104CA284E5636000630C2 /* Constant.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -274,7 +288,7 @@
 			);
 			name = "Weatherise SwiftUI";
 			packageProductDependencies = (
-				40F67AAF28470B9F006D5507 /* Cleanse */,
+				403104C5284E5462000630C2 /* Alamofire */,
 			);
 			productName = "Weatherise SwiftUI";
 			productReference = 40F67A632846238B006D5507 /* Weatherise SwiftUI.app */;
@@ -349,7 +363,7 @@
 			);
 			mainGroup = 40F67A5A2846238B006D5507;
 			packageReferences = (
-				40F67AAE28470B9F006D5507 /* XCRemoteSwiftPackageReference "Cleanse" */,
+				403104C4284E5462000630C2 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 40F67A642846238B006D5507 /* Products */;
 			projectDirPath = "";
@@ -368,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40F67A6E2846238C006D5507 /* Preview Assets.xcassets in Resources */,
+				403104C9284E5542000630C2 /* Weather-API-Info.plist in Resources */,
 				40F67A6B2846238C006D5507 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +416,7 @@
 				40F67AB328477102006D5507 /* Injection.swift in Sources */,
 				40F67A672846238B006D5507 /* Weatherise_SwiftUIApp.swift in Sources */,
 				40F67AAA284684E5006D5507 /* WeatherRemoteDataSource.swift in Sources */,
+				403104CB284E5636000630C2 /* Constant.swift in Sources */,
 				40F67AA128467DDB006D5507 /* WeatherUseCase.swift in Sources */,
 				40F67AA328467E6F006D5507 /* WeatherInteractor.swift in Sources */,
 			);
@@ -753,21 +769,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		40F67AAE28470B9F006D5507 /* XCRemoteSwiftPackageReference "Cleanse" */ = {
+		403104C4284E5462000630C2 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/square/Cleanse";
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		40F67AAF28470B9F006D5507 /* Cleanse */ = {
+		403104C5284E5462000630C2 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 40F67AAE28470B9F006D5507 /* XCRemoteSwiftPackageReference "Cleanse" */;
-			productName = Cleanse;
+			package = 403104C4284E5462000630C2 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

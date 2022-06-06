@@ -7,7 +7,6 @@
 
 import Foundation
 import CoreLocation
-import Cleanse
 
 class WeatherInteractor: WeatherUseCase {
 
@@ -17,8 +16,8 @@ class WeatherInteractor: WeatherUseCase {
     self.repository = repository
   }
 
-  func fetchWeather(location: CLLocation, completion: @escaping (CurrentWeather) -> ()) {
-    repository.fetchWeather(location: location) { weather in
+  func fetchCurrentWeather(location: CLLocation, completion: @escaping(Weather) -> ()) {
+    repository.fetchCurrentWeather(location: location) { weather in
       completion(weather)
     }
   }

@@ -5,27 +5,30 @@
 //  Created by Dimas Putro on 31/05/22.
 //
 
-import Foundation
 import CoreLocation
-import Swinject
 
 class HomeViewModel: ObservableObject {
 
-  private var useCase: WeatherUseCase
+  private var useCase: WeatherInteractor
 
-  init(useCase: WeatherUseCase) {
+  @Published var isLoading: Bool = true
+  @Published var currentWeather: Current?
+  @Published var location: Location?
+
+  init(useCase: WeatherInteractor) {
     self.useCase = useCase
   }
 
+  var currentTempC: Int {
+    return Int(currentWeather?.tempC ?? 0)
+  }
+
   func fetchWeather(location: CLLocation) {
-    useCase.fetchWeather(location: location) { weather in
+    useCase.fetchCurrentWeather(location: location) { weather in
       print("DEBUG: viewModel: result: \(weather)")
+      self.isLoading = false
+      self.currentWeather = weather.current
+      self.location = weather.location
     }
   }
 }
-
-//class Injection: NSObject {
-//  func provideHome() {
-//
-//  }
-//}
