@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 var API_KEY: String {
   guard let filePath = Bundle.main.path(forResource: "Weather-API-Info", ofType: "plist") else {
@@ -19,4 +20,24 @@ var API_KEY: String {
   }
 
   return value
+}
+
+func generateWeatherIcon(condition: String) -> String {
+  if condition.contains("clear") {
+    return "sun.max"
+  } else if condition.contains("cloudy") {
+    return "cloud.sun"
+  } else if condition.contains("rain") {
+    return "cloud.rain"
+  } else {
+    return "minus"
+  }
+
+
+//    switch condition {
+//      case condition.contains("clear"):
+//        return UIImage(systemName: "sun.max")!
+//    case condition.contains("cloudy"):
+//      return UIImage(systemName: "cloud.sun")!
+//    }
 }
