@@ -9,13 +9,13 @@ import SwiftUI
 import CoreLocation
 
 struct HomeView: View {
-  
+
   @ObservedObject var weatherViewModel: HomeViewModel = HomeViewModel(useCase: Injection().provideHome())
-  
+
   var body: some View {
     ZStack {
       generateBackground
-      
+
       countryAndTime
     }
     .frame(width: UIScreen.main.bounds.width, height: .infinity)
@@ -23,7 +23,7 @@ struct HomeView: View {
       weatherViewModel.fetchWeather(location: CLLocation(latitude: 0.916696, longitude: 104.4548317))
     }
   }
-  
+
   private var generateBackground: some View {
     Image("img-weather-bg-sunset-clear")
       .resizable()
@@ -37,23 +37,23 @@ struct HomeView: View {
           .edgesIgnoringSafeArea(.all)
       )
   }
-  
+
   private var countryAndTime: some View {
     VStack(alignment: .leading) {
       Text("\(weatherViewModel.location?.name ?? "")")
         .font(Font.system(size: 30, weight: .semibold))
         .foregroundColor(Color.white)
         .padding(.top, 30)
-      
-      Text(weatherViewModel.location?.localtime ?? "")
+
+      Text(weatherViewModel.currentWeather?.lastUpdated ?? "")
         .font(Font.system(size: 16, weight: .bold))
         .foregroundColor(Color.white)
-      
+
       Text("\(weatherViewModel.currentTempC)°")
         .font(Font.system(size: 90, weight: .bold))
         .foregroundColor(Color.white)
         .padding(.bottom, -10)
-      
+
       HStack(alignment: .center, spacing: 12) {
         Image(systemName: generateWeatherIcon(condition: weatherViewModel.currentWeather?.condition.text ?? ""))
           .resizable()
@@ -62,12 +62,12 @@ struct HomeView: View {
           .foregroundColor(Color.white)
           .font(Font.system(size: 30, weight: .bold))
           .frame(width: 30, height: 30)
-        
+
         Text(weatherViewModel.currentWeather?.condition.text ?? "")
           .font(Font.system(size: 16, weight: .bold))
           .foregroundColor(Color.white)
       }
-      
+
       Spacer()
     }
     .padding(.horizontal, 20)
