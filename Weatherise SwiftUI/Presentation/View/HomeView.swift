@@ -13,14 +13,25 @@ struct HomeView: View {
   @ObservedObject var weatherViewModel: HomeViewModel = HomeViewModel(useCase: Injection().provideHome())
 
   var body: some View {
-    ZStack {
-      generateBackground
+    NavigationView {
+        ZStack {
+          generateBackground
 
-      countryAndTime
-    }
-    .frame(width: UIScreen.main.bounds.width, height: .infinity)
-    .onAppear {
-      weatherViewModel.fetchWeather(location: CLLocation(latitude: 0.916696, longitude: 104.4548317))
+          header
+
+          VStack {
+            countryAndTime
+
+            Spacer()
+          }
+          .padding(.top, 10)
+        }
+        .frame(width: UIScreen.main.bounds.width, height: .infinity)
+        .onAppear {
+          weatherViewModel.fetchWeather(location: CLLocation(latitude: 0.916696, longitude: 104.4548317))
+        }
+
+
     }
   }
 
@@ -36,6 +47,34 @@ struct HomeView: View {
           .opacity(0.2)
           .edgesIgnoringSafeArea(.all)
       )
+  }
+
+  private var header: some View {
+    VStack {
+      HStack {
+        Image(systemName: "magnifyingglass")
+          .resizable()
+          .renderingMode(.original)
+          .frame(width: 25, height: 25)
+          .foregroundColor(Color.white)
+          .padding(.top, 30)
+
+        Spacer()
+
+        Image(systemName: "list.bullet.circle")
+          .resizable()
+          .renderingMode(.original)
+          .frame(width: 25, height: 25)
+          .foregroundColor(Color.white)
+          .padding(.top, 30)
+
+      }
+      .padding(.horizontal, 20)
+      .frame(width: UIScreen.main.bounds.width, height: 95)
+      .edgesIgnoringSafeArea(.top)
+
+      Spacer()
+    }
   }
 
   private var countryAndTime: some View {
@@ -67,8 +106,6 @@ struct HomeView: View {
           .font(Font.system(size: 16, weight: .bold))
           .foregroundColor(Color.white)
       }
-
-      Spacer()
     }
     .padding(.horizontal, 20)
     .frame(width: UIScreen.main.bounds.width, height: .infinity, alignment: .leading)
