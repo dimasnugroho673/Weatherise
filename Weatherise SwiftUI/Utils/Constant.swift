@@ -23,6 +23,7 @@ var API_KEY: String {
 }
 
 func generateWeatherIcon(condition: String) -> String {
+  let condition = condition.lowercased()
   if condition.contains("clear") {
     return "sun.max"
   } else if condition.contains("cloudy") {
