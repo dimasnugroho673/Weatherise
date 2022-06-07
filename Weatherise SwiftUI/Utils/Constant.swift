@@ -26,6 +26,8 @@ func generateWeatherIcon(condition: String) -> String {
   let condition = condition.lowercased()
   if condition.contains("clear") {
     return "sun.max"
+  } else if condition.contains("sunny") {
+    return "sun.max"
   } else if condition.contains("cloudy") {
     return "cloud.sun"
   } else if condition.contains("rain") {
