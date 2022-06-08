@@ -13,39 +13,66 @@ struct HomeView: View {
   @ObservedObject var weatherViewModel: HomeViewModel = HomeViewModel(useCase: Injection().provideHome(), locationService: LocationService())
   @ObservedObject var locationService: LocationService = LocationService()
 
+  @State var showLocationSearchModal: Bool = false
+
   var body: some View {
     NavigationView {
-        ZStack {
-          generateBackground
+      ZStack {
+        generateBackground
 
-          header
+        VStack {
+          countryAndTime
+            .padding(.top, 20)
 
-          VStack {
-            countryAndTime
+          Spacer()
 
-            Spacer()
+          Divider()
+            .frame(width: UIScreen.main.bounds.width - 20, height: 1)
+            .background(Color.white)
+            .opacity(0.5)
+            .cornerRadius(8)
 
-            Divider()
-              .frame(width: UIScreen.main.bounds.width - 20, height: 1)
-              .background(Color.white)
-              .opacity(0.5)
-              .cornerRadius(8)
+          footer
+            .padding(.top, 5)
+            .padding(.bottom, 60)
+        }
+        .padding(.top, 40)
 
-            footer
-              .padding(.top, 5)
-              .padding(.bottom, 85)
+      }
+      .frame(width: UIScreen.main.bounds.width, height: .infinity)
+      .onAppear {
+        weatherViewModel.fetchWeather(location: locationService.coodinate)
+        print("WAKTU: \(generateWeatherConditionInString(condition: weatherViewModel.currentWeather?.condition.text ?? ""))")
+      }
+      .onReceive(locationService.$coodinate) { location in
+        weatherViewModel.fetchWeather(location: locationService.coodinate)
+        print("DEBUG: location update: \(locationService.coodinate))")
+      }
+      .sheet(isPresented: $showLocationSearchModal) {
+        SearchLocationView()
+      }
+
+      .navigationBarTitleDisplayMode(.inline)
+      .toolbar {
+        ToolbarItemGroup(placement: .navigationBarTrailing) {
+          Button(action: {
+            self.showLocationSearchModal.toggle()
+          }) {
+            Image(systemName: "magnifyingglass")
+              .resizable()
+              .renderingMode(.original)
+              .frame(width: 20, height: 20)
+              .foregroundColor(Color.white)
           }
-          .padding(.top, 10)
+
+          Image(systemName: "list.bullet.circle")
+            .resizable()
+            .renderingMode(.original)
+            .frame(width: 20, height: 20)
+            .foregroundColor(Color.white)
+            .padding(.leading, 5)
         }
-        .frame(width: UIScreen.main.bounds.width, height: .infinity)
-        .onAppear {
-          weatherViewModel.fetchWeather(location: locationService.coodinate)
-          print("WAKTU: \(generateWeatherConditionInString(condition: weatherViewModel.currentWeather?.condition.text ?? ""))")
-        }
-        .onReceive(locationService.$coodinate) { location in
-          weatherViewModel.fetchWeather(location: locationService.coodinate)
-          print("DEBUG: location update: \(locationService.coodinate))")
-        }
+      }
     }
   }
 
@@ -73,6 +100,7 @@ struct HomeView: View {
           .foregroundColor(Color.white)
           .padding(.top, 30)
 
+
         Spacer()
 
         Image(systemName: "list.bullet.circle")
@@ -85,10 +113,14 @@ struct HomeView: View {
       }
       .padding(.horizontal, 20)
       .frame(width: UIScreen.main.bounds.width, height: 95)
-      .edgesIgnoringSafeArea(.top)
-
-      Spacer()
+      .background(Color.red)
     }
+    .background(Color.blue)
+    .onTapGesture {
+      self.showLocationSearchModal.toggle()
+    }
+    .edgesIgnoringSafeArea(.top)
+
   }
 
   private var countryAndTime: some View {
@@ -96,7 +128,7 @@ struct HomeView: View {
       Text("\(weatherViewModel.location?.name ?? "")")
         .font(Font.system(size: 30, weight: .semibold))
         .foregroundColor(Color.white)
-        .padding(.top, 30)
+        .padding(.top, 0)
 
       Text(weatherViewModel.currentDate)
         .font(Font.system(size: 16, weight: .bold))
