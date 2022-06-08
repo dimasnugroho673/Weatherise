@@ -49,7 +49,7 @@ struct HomeView: View {
         print("DEBUG: location update: \(locationService.coodinate))")
       }
       .sheet(isPresented: $showLocationSearchModal) {
-        SearchLocationView()
+        LocationView()
       }
 
       .navigationBarTitleDisplayMode(.inline)

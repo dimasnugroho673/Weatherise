@@ -52,11 +52,18 @@ func generateWeatherConditionInString(condition: String) -> String {
 
 func generateTimeInString(epoch: String) -> String {
   let epoch = Double(epoch)
+//  let date = Date(timeIntervalSince1970: epoch ?? 0.0)
+//
+//  let calendar = Calendar.current
+//
+//  let hour = calendar.component(.hour, from: date)
   let date = Date(timeIntervalSince1970: epoch ?? 0.0)
 
-  let calendar = Calendar.current
+  let dayTimePeriodFormatter = DateFormatter()
 
-  let hour = calendar.component(.hour, from: date)
+  dayTimePeriodFormatter.dateFormat = "HH"
+
+  let hour = Int(dayTimePeriodFormatter.string(from: date as Date))!
 
   if hour >= 05 && hour <= 06 {
     return "sunrise"

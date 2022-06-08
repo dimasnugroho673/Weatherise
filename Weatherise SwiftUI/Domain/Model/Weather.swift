@@ -87,6 +87,17 @@ struct Location: Codable {
   }
 }
 
+// MARK: - Welcome
+struct LocationResult: Codable {
+  let id: Int
+  let name, region, country: String
+  let lat, lon: Double
+
+  enum CodingKeys: String, CodingKey {
+    case id, name, region, country, lat, lon
+  }
+}
+
 // MARK: - AirQuality
 struct AirQuality: Codable {
   let co, no2, o3: Double

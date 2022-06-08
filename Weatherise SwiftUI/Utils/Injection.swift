@@ -14,4 +14,12 @@ class Injection {
 
     return WeatherInteractor(repository: repository)
   }
+
+  func provideLocation() -> LocationInteractor {
+    let remoteDataSource = LocationRemoteDataSource()
+    let localDataSource = LocationLocalDataSource()
+    let repository = LocationRepository(remoteDataSource: remoteDataSource, localDataSource: localDataSource)
+
+    return LocationInteractor(repository: repository)
+  }
 }
