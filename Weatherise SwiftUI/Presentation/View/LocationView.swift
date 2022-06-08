@@ -21,9 +21,6 @@ struct LocationView: View {
     let navBarAppearance = UINavigationBar.appearance()
     navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
     navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-
-    UITableView.appearance().backgroundColor = .clear // tableview background
-            UITableViewCell.appearance().backgroundColor = .clear // cell background
   }
 
   var body: some View {
@@ -63,6 +60,8 @@ struct LocationView: View {
 
           List(locationViewModel.locationResults, id: \.name) { location in
             Text("\(location.name), \(location.region), \(location.region)")
+              .foregroundColor(Color.white)
+              .listRowBackground(Color.black)
           }
           .listStyle(.plain)
         }
