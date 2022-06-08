@@ -28,7 +28,7 @@ struct HomeView: View {
             Divider()
               .frame(width: UIScreen.main.bounds.width - 20, height: 1)
               .background(Color.white)
-              .opacity(0.7)
+              .opacity(0.5)
               .cornerRadius(8)
 
             footer
@@ -58,7 +58,7 @@ struct HomeView: View {
       .overlay(
         Rectangle()
           .background(Color.black)
-          .opacity(0.2)
+          .opacity(0.25)
           .edgesIgnoringSafeArea(.all)
       )
   }
@@ -103,7 +103,7 @@ struct HomeView: View {
         .foregroundColor(Color.white)
 
       Text("\(weatherViewModel.currentTempC)°")
-        .font(Font.system(size: 90, weight: .bold))
+        .font(Font.system(size: 98, weight: .bold))
         .foregroundColor(Color.white)
         .padding(.bottom, -10)
 
