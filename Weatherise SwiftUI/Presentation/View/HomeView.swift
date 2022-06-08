@@ -59,7 +59,7 @@ struct HomeView: View {
         Image(systemName: "magnifyingglass")
           .resizable()
           .renderingMode(.original)
-          .frame(width: 25, height: 25)
+          .frame(width: 20, height: 20)
           .foregroundColor(Color.white)
           .padding(.top, 30)
 
@@ -68,7 +68,7 @@ struct HomeView: View {
         Image(systemName: "list.bullet.circle")
           .resizable()
           .renderingMode(.original)
-          .frame(width: 25, height: 25)
+          .frame(width: 20, height: 20)
           .foregroundColor(Color.white)
           .padding(.top, 30)
 
