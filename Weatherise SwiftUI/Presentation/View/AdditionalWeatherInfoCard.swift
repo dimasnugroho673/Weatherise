@@ -30,7 +30,7 @@ struct AdditionalWeatherInfoCard: View {
     }
     .frame(width: 100, height: 100, alignment: .leading)
     .padding()
-    .background(Color.white.opacity(0.1))
+    .background(BlurView(style: .light))
     .cornerRadius(14)
   }
 }
@@ -38,5 +38,17 @@ struct AdditionalWeatherInfoCard: View {
 struct AdditionalWeatherInfoCard_Previews: PreviewProvider {
   static var previews: some View {
     AdditionalWeatherInfoCard(iconHeader: "humidity", title: "Humidity", value: "66", unit: "%")
+  }
+}
+
+struct BlurView: UIViewRepresentable {
+  var style: UIBlurEffect.Style = .systemMaterial
+
+  func makeUIView(context: Context) -> UIVisualEffectView {
+    return UIVisualEffectView(effect: UIBlurEffect(style: style))
+  }
+
+  func updateUIView(_ uiView: UIViewType, context: Context) {
+    uiView.effect = UIBlurEffect(style: style)
   }
 }
