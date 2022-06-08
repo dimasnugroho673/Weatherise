@@ -39,6 +39,7 @@ struct HomeView: View {
         }
         .frame(width: UIScreen.main.bounds.width, height: .infinity)
         .onAppear {
+          UIApplication.shared.statusBarStyle = .lightContent
           weatherViewModel.fetchWeather(location: locationService.coodinate)
           print("WAKTU: \(generateWeatherConditionInString(condition: weatherViewModel.currentWeather?.condition.text ?? ""))")
         }

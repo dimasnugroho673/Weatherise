@@ -53,6 +53,7 @@
 		403104CA284E5636000630C2 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		405BC656284F9A4800569D64 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		405BC65F28505CA200569D64 /* AdditionalWeatherInfoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalWeatherInfoCard.swift; sourceTree = "<group>"; };
+		405BC66128506C6D00569D64 /* Weatherise-SwiftUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Weatherise-SwiftUI-Info.plist"; sourceTree = SOURCE_ROOT; };
 		40F67A632846238B006D5507 /* Weatherise SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weatherise SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		40F67A662846238B006D5507 /* Weatherise_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weatherise_SwiftUIApp.swift; sourceTree = "<group>"; };
 		40F67A682846238B006D5507 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -140,6 +141,7 @@
 		40F67A652846238B006D5507 /* Weatherise SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				405BC66128506C6D00569D64 /* Weatherise-SwiftUI-Info.plist */,
 				405BC655284F9A3800569D64 /* Services */,
 				403104C8284E5542000630C2 /* Weather-API-Info.plist */,
 				40F67A6C2846238C006D5507 /* Preview Content */,
@@ -605,6 +607,7 @@
 				DEVELOPMENT_TEAM = D7589S3EHF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Weatherise-SwiftUI-Info.plist";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app want to use location service to track weather in your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -636,6 +639,7 @@
 				DEVELOPMENT_TEAM = D7589S3EHF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Weatherise-SwiftUI-Info.plist";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app want to use location service to track weather in your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
