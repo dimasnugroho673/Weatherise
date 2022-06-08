@@ -13,12 +13,8 @@ import RxSwift
 final class WeatherRemoteDataSource {
   
   func fetchCurrentWeather(location: CLLocationCoordinate2D) -> Observable<Weather> {
-
-    let url = "https://api.weatherapi.com/v1/current.json?key=\(API_KEY)&q=\(location.latitude),\(location.longitude)&aqi=yes"
-    let newUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-
     return Observable<Weather>.create { observer in
-      AF.request(newUrl!)
+      AF.request("https://api.weatherapi.com/v1/current.json?key=\(API_KEY)&q=\(location.latitude),\(location.longitude)&aqi=yes")
         .validate(statusCode: 200..<300)
         .responseDecodable(of: Weather.self) { response in
           switch response.result {
