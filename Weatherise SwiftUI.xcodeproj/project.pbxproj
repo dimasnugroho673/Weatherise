@@ -11,6 +11,8 @@
 		403104C9284E5542000630C2 /* Weather-API-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 403104C8284E5542000630C2 /* Weather-API-Info.plist */; };
 		403104CB284E5636000630C2 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403104CA284E5636000630C2 /* Constant.swift */; };
 		405BC657284F9A4800569D64 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405BC656284F9A4800569D64 /* LocationService.swift */; };
+		405BC65A2850548000569D64 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 405BC6592850548000569D64 /* RxCocoa */; };
+		405BC65C2850548000569D64 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 405BC65B2850548000569D64 /* RxSwift */; };
 		40F67A672846238B006D5507 /* Weatherise_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F67A662846238B006D5507 /* Weatherise_SwiftUIApp.swift */; };
 		40F67A692846238B006D5507 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F67A682846238B006D5507 /* HomeView.swift */; };
 		40F67A6B2846238C006D5507 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40F67A6A2846238C006D5507 /* Assets.xcassets */; };
@@ -74,6 +76,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				405BC65C2850548000569D64 /* RxSwift in Frameworks */,
+				405BC65A2850548000569D64 /* RxCocoa in Frameworks */,
 				403104C6284E5462000630C2 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +304,8 @@
 			name = "Weatherise SwiftUI";
 			packageProductDependencies = (
 				403104C5284E5462000630C2 /* Alamofire */,
+				405BC6592850548000569D64 /* RxCocoa */,
+				405BC65B2850548000569D64 /* RxSwift */,
 			);
 			productName = "Weatherise SwiftUI";
 			productReference = 40F67A632846238B006D5507 /* Weatherise SwiftUI.app */;
@@ -375,6 +381,7 @@
 			mainGroup = 40F67A5A2846238B006D5507;
 			packageReferences = (
 				403104C4284E5462000630C2 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				405BC6582850548000569D64 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 40F67A642846238B006D5507 /* Products */;
 			projectDirPath = "";
@@ -791,6 +798,14 @@
 				kind = branch;
 			};
 		};
+		405BC6582850548000569D64 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -798,6 +813,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 403104C4284E5462000630C2 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		405BC6592850548000569D64 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 405BC6582850548000569D64 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		405BC65B2850548000569D64 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 405BC6582850548000569D64 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreLocation
+import RxSwift
 
 class WeatherRepository: WeatherRepositoryProtocol {
 
@@ -16,9 +17,7 @@ class WeatherRepository: WeatherRepositoryProtocol {
     self.remoteDataSource = remoteDataSource
   }
 
-  func fetchCurrentWeather(location: CLLocationCoordinate2D, completion: @escaping (Weather) -> ()) {
-    remoteDataSource.fetchCurrentWeather(location: location) { weather in
-      completion(weather)
-    }
+  func fetchCurrentWeather(location: CLLocationCoordinate2D) -> Observable<Weather> {
+    return remoteDataSource.fetchCurrentWeather(location: location)
   }
 }

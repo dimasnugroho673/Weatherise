@@ -7,7 +7,8 @@
 
 import Foundation
 import CoreLocation
+import RxSwift
 
 protocol WeatherRepositoryProtocol {
-  func fetchCurrentWeather(location: CLLocationCoordinate2D, completion: @escaping(Weather) -> ())
+  func fetchCurrentWeather(location: CLLocationCoordinate2D) -> Observable<Weather>
 }

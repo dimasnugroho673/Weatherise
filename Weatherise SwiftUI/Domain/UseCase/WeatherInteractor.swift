@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreLocation
+import RxSwift
 
 class WeatherInteractor: WeatherUseCase {
 
@@ -16,9 +17,7 @@ class WeatherInteractor: WeatherUseCase {
     self.repository = repository
   }
 
-  func fetchCurrentWeather(location: CLLocationCoordinate2D, completion: @escaping(Weather) -> ()) {
-    repository.fetchCurrentWeather(location: location) { weather in
-      completion(weather)
-    }
+  func fetchCurrentWeather(location: CLLocationCoordinate2D) -> Observable<Weather> {
+    return repository.fetchCurrentWeather(location: location)
   }
 }
