@@ -16,7 +16,7 @@ class WeatherInteractor: WeatherUseCase {
     self.repository = repository
   }
 
-  func fetchCurrentWeather(location: CLLocation, completion: @escaping(Weather) -> ()) {
+  func fetchCurrentWeather(location: CLLocationCoordinate2D, completion: @escaping(Weather) -> ()) {
     repository.fetchCurrentWeather(location: location) { weather in
       completion(weather)
     }

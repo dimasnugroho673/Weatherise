@@ -35,12 +35,42 @@ func generateWeatherIcon(condition: String) -> String {
   } else {
     return "minus"
   }
+}
 
+func generateWeatherConditionInString(condition: String) -> String {
+  let condition = condition.lowercased()
+  if condition.contains("sunny") || condition.contains("clear") {
+    return "clear"
+  } else if condition.contains("cloudy") {
+    return "cloudy"
+  } else if condition.contains("rain") {
+    return "rain"
+  } else {
+    return "clear"
+  }
+}
 
-//    switch condition {
-//      case condition.contains("clear"):
-//        return UIImage(systemName: "sun.max")!
-//    case condition.contains("cloudy"):
-//      return UIImage(systemName: "cloud.sun")!
-//    }
+func generateTimeInString(epoch: String) -> String {
+  let epoch = Double(epoch)
+  let date = Date(timeIntervalSince1970: epoch ?? 0.0)
+
+  let calendar = Calendar.current
+
+  let hour = calendar.component(.hour, from: date)
+
+  if hour >= 05 && hour <= 06 {
+    return "sunrise"
+  } else if hour >= 07 && hour <= 16 {
+    return "day"
+  } else if hour >= 17 && hour <= 18 {
+    return "sunset"
+  } else if hour >= 19 && hour <= 04 {
+    return "night"
+  } else {
+    return "day"
+  }
+}
+
+func generateWeatherBackgroundName(timeInString: String, weatherInString: String) -> String {
+  return "img-weather-bg-\(timeInString)-\(weatherInString)"
 }

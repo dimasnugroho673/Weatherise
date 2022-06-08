@@ -10,7 +10,7 @@ import CoreLocation
 import Alamofire
 
 final class WeatherRemoteDataSource {
-  func fetchCurrentWeather(location: CLLocation, completion: @escaping (Weather) -> ()) {
+  func fetchCurrentWeather(location: CLLocationCoordinate2D, completion: @escaping (Weather) -> ()) {
 
     // Using URLSession
 //    let task = URLSession.shared.dataTask(with: URL(string: "https://api.weatherapi.com/v1/current.json?key=\(API_KEY)&q=Tanjungpinang&aqi=yes")!) { data, _, error in
@@ -31,7 +31,7 @@ final class WeatherRemoteDataSource {
 //
 //    task.resume()
 
-    AF.request("https://api.weatherapi.com/v1/current.json?key=\(API_KEY)&q=\(location.coordinate.latitude),\(location.coordinate.longitude)&aqi=yes")
+    AF.request("https://api.weatherapi.com/v1/current.json?key=\(API_KEY)&q=\(location.latitude),\(location.longitude)&aqi=yes")
       .validate(statusCode: 200..<300)
       .responseDecodable(of: Weather.self) { response in
         switch response.result {

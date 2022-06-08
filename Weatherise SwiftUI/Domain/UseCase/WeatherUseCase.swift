@@ -9,5 +9,5 @@ import Foundation
 import CoreLocation
 
 protocol WeatherUseCase {
-  func fetchCurrentWeather(location: CLLocation, completion: @escaping(Weather) -> ())
+  func fetchCurrentWeather(location: CLLocationCoordinate2D, completion: @escaping(Weather) -> ())
 }

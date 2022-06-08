@@ -10,7 +10,8 @@ import CoreLocation
 
 struct HomeView: View {
 
-  @ObservedObject var weatherViewModel: HomeViewModel = HomeViewModel(useCase: Injection().provideHome())
+  @ObservedObject var weatherViewModel: HomeViewModel = HomeViewModel(useCase: Injection().provideHome(), locationService: LocationService())
+  @ObservedObject var locationService: LocationService = LocationService()
 
   var body: some View {
     NavigationView {
@@ -28,15 +29,18 @@ struct HomeView: View {
         }
         .frame(width: UIScreen.main.bounds.width, height: .infinity)
         .onAppear {
-          weatherViewModel.fetchWeather(location: CLLocation(latitude: 0.916696, longitude: 104.4548317))
+          weatherViewModel.fetchWeather(location: locationService.coodinate)
+          print("WAKTU: \(generateWeatherConditionInString(condition: weatherViewModel.currentWeather?.condition.text ?? ""))")
         }
-
-
+        .onReceive(locationService.$coodinate) { location in
+          weatherViewModel.fetchWeather(location: locationService.coodinate)
+          print("DEBUG: location update: \(locationService.coodinate))")
+        }
     }
   }
 
   private var generateBackground: some View {
-    Image("img-weather-bg-sunset-clear")
+    Image(generateWeatherBackgroundName(timeInString: generateTimeInString(epoch: String(weatherViewModel.currentWeather?.lastUpdatedEpoch ?? Int(0.0))), weatherInString: String(generateWeatherConditionInString(condition: weatherViewModel.currentWeather?.condition.text ?? ""))))
       .resizable()
       .edgesIgnoringSafeArea(.all)
       .aspectRatio(contentMode: .fill)
