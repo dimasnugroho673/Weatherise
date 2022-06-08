@@ -28,6 +28,18 @@ class HomeViewModel: ObservableObject {
     return Int(currentWeather?.tempC ?? 0)
   }
 
+  var currentDate: String {
+    let date = Date(timeIntervalSince1970: Double(currentWeather?.lastUpdatedEpoch ?? 0))
+
+    let dayTimePeriodFormatter = DateFormatter()
+
+    dayTimePeriodFormatter.dateFormat = "HH:mm — EEEE, d MMMM"
+
+    let dateTimeString = dayTimePeriodFormatter.string(from: date as Date)
+
+    return dateTimeString
+  }
+
   func fetchWeather(location: CLLocationCoordinate2D) {
     useCase
       .fetchCurrentWeather(location: location)

@@ -98,7 +98,7 @@ struct HomeView: View {
         .foregroundColor(Color.white)
         .padding(.top, 30)
 
-      Text(weatherViewModel.currentWeather?.lastUpdated ?? "")
+      Text(weatherViewModel.currentDate)
         .font(Font.system(size: 16, weight: .bold))
         .foregroundColor(Color.white)
 
@@ -120,6 +120,18 @@ struct HomeView: View {
           .font(Font.system(size: 16, weight: .bold))
           .foregroundColor(Color.white)
       }
+
+      Label("See forecast ", systemImage: "calendar")
+        .font(Font.system(size: 14, weight: .semibold))
+        .foregroundColor(Color.white)
+        .frame(height: 20)
+        .padding([.leading, .trailing], 18)
+        .padding([.top, .bottom], 3)
+        .background(BlurView(style: .light))
+        .cornerRadius(20)
+        .padding(.top, 10)
+        .padding(.leading, 0)
+
     }
     .padding(.horizontal, 20)
     .frame(width: UIScreen.main.bounds.width, height: .infinity, alignment: .leading)
