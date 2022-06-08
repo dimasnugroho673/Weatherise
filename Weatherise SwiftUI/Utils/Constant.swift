@@ -33,7 +33,7 @@ func generateWeatherIcon(condition: String) -> String {
   } else if condition.contains("rain") {
     return "cloud.rain"
   } else {
-    return "minus"
+    return "rays"
   }
 }
 

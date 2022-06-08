@@ -24,6 +24,16 @@ struct HomeView: View {
             countryAndTime
 
             Spacer()
+
+            Divider()
+              .frame(width: UIScreen.main.bounds.width - 20, height: 1)
+              .background(Color.white)
+              .opacity(0.7)
+              .cornerRadius(8)
+
+            footer
+              .padding(.top, 5)
+              .padding(.bottom, 85)
           }
           .padding(.top, 10)
         }
@@ -113,6 +123,22 @@ struct HomeView: View {
     }
     .padding(.horizontal, 20)
     .frame(width: UIScreen.main.bounds.width, height: .infinity, alignment: .leading)
+  }
+
+  private var footer: some View {
+    ScrollView(.horizontal, showsIndicators: false) {
+      HStack(spacing: 10) {
+        AdditionalWeatherInfoCard(iconHeader: "eye.fill", title: "visibility", value: String(weatherViewModel.currentWeather?.visKM ?? 0), unit: "KM")
+          .padding(.leading, 10)
+
+        AdditionalWeatherInfoCard(iconHeader: "thermometer", title: "feels like", value: String(weatherViewModel.currentWeather?.feelslikeC ?? 0.0), unit: "℃")
+
+        AdditionalWeatherInfoCard(iconHeader: "humidity", title: "humidity", value: String(weatherViewModel.currentWeather?.humidity ?? 0), unit: "%")
+
+        AdditionalWeatherInfoCard(iconHeader: "eye.fill", title: "visibility", value: String(weatherViewModel.currentWeather?.visKM ?? 0), unit: "KM")
+          .padding(.trailing, 10)
+      }
+    }
   }
 }
 

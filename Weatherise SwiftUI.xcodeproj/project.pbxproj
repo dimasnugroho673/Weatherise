@@ -13,6 +13,7 @@
 		405BC657284F9A4800569D64 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405BC656284F9A4800569D64 /* LocationService.swift */; };
 		405BC65A2850548000569D64 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 405BC6592850548000569D64 /* RxCocoa */; };
 		405BC65C2850548000569D64 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 405BC65B2850548000569D64 /* RxSwift */; };
+		405BC66028505CA200569D64 /* AdditionalWeatherInfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405BC65F28505CA200569D64 /* AdditionalWeatherInfoCard.swift */; };
 		40F67A672846238B006D5507 /* Weatherise_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F67A662846238B006D5507 /* Weatherise_SwiftUIApp.swift */; };
 		40F67A692846238B006D5507 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F67A682846238B006D5507 /* HomeView.swift */; };
 		40F67A6B2846238C006D5507 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40F67A6A2846238C006D5507 /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		403104C8284E5542000630C2 /* Weather-API-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Weather-API-Info.plist"; sourceTree = "<group>"; };
 		403104CA284E5636000630C2 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		405BC656284F9A4800569D64 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		405BC65F28505CA200569D64 /* AdditionalWeatherInfoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalWeatherInfoCard.swift; sourceTree = "<group>"; };
 		40F67A632846238B006D5507 /* Weatherise SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weatherise SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		40F67A662846238B006D5507 /* Weatherise_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weatherise_SwiftUIApp.swift; sourceTree = "<group>"; };
 		40F67A682846238B006D5507 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				40F67A682846238B006D5507 /* HomeView.swift */,
+				405BC65F28505CA200569D64 /* AdditionalWeatherInfoCard.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				40F67A692846238B006D5507 /* HomeView.swift in Sources */,
 				40F67AA82846809B006D5507 /* HomeViewModel.swift in Sources */,
 				40F67A9D284674DE006D5507 /* Weather.swift in Sources */,
+				405BC66028505CA200569D64 /* AdditionalWeatherInfoCard.swift in Sources */,
 				40F67AB328477102006D5507 /* Injection.swift in Sources */,
 				40F67A672846238B006D5507 /* Weatherise_SwiftUIApp.swift in Sources */,
 				40F67AAA284684E5006D5507 /* WeatherRemoteDataSource.swift in Sources */,
